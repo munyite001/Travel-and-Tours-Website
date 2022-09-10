@@ -1,12 +1,20 @@
 const header = document.querySelector("header");
-
-window.addEventListener ("scroll", function() {
-	header.classList.toggle ("sticky", window.scrollY > 0);
-});
-
 let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+window.addEventListener ("scroll", ()=> {
+	if (window.scrollY > 30)
+	{
+		header.classList.add('sticky');
+		menu.style.color = 'black';
+	}
+	else
+	{
+		header.classList.remove('sticky');
+		menu.style.color = 'white';
+	}
+})
 
+
+let navbar = document.querySelector('.navbar');
 menu.onclick = () => {
 	menu.classList.toggle('bx-x');
 	navbar.classList.toggle('open');
